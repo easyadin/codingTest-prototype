@@ -35,7 +35,7 @@ img {
 }
 
 .main_btnn{
-    margin-top: 150px;
+    margin-top: 250px;
     width: 237px;
     height: 64px;
     background: rgb(255, 242, 0);
@@ -53,13 +53,6 @@ img {
     opacity: 0.2;
 }
 
-.activeBtn{
-    width: 250px;
-    margin-top: 5px;
-    border-radius: 10px;
-    opacity: .1;
-    
-}
 
 .someSpacing {
     padding: 10px;
@@ -70,7 +63,7 @@ img {
 }
 
 .api_response{
-    margin-top: 350px;
+    margin-top: 430px;
     color: white;
     font-family: "Roboto";
     font-weight: 100;
