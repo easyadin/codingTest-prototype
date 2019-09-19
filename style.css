@@ -54,6 +54,13 @@ img {
     opacity: 0.2;
 }
 
+.activeBtn{
+    width: 250px;
+    margin-top: 5px;
+    border-radius: 10px;
+    opacity: .1;
+    
+}
 
 .someSpacing {
     padding: 10px;
@@ -76,3 +83,4 @@ img {
    justify-content: center;
    color: yellow;
 }
+

@@ -26,12 +26,21 @@ var highest_appearance = -1;
 var highest_appearance_person = null;
 
 
+// detect when content is updated 
+var responseRecieved = false;
+
 
 // get data from api
 function requestData(){
+      responseRecieved = true
+      console.log(responseRecieved)
+
+ 
     //request films 
     axios.get(starWarsFilm).then(response =>{
       getLongestCrawl(response.data.results);
+
+      
     }).catch(e =>{
         console.log("not available")
     })
@@ -51,9 +60,17 @@ function requestData(){
       //request planet
     axios.get(starWarsPlanets).then(response =>{
         getPlanet_With_Largest_Vehicle_Pilot(response.data.results);
+
       }).catch(e =>{
         console.log("not available")
     })
+
+   //modify click when response is recieved
+   if(responseRecieved == true){
+    var btn = document.getElementsByClassName('btn_image')[0];
+    btn.removeAttribute("class");
+    btn.setAttribute("class","activeBtn")
+}
 }
 
 //get movie with longest opening crawl
@@ -209,5 +226,6 @@ function getPlanetAddress(planetaddress,residentName){
 }
 
 
-//trigger to answers
+
+//btn trigger to answers
 button.addEventListener('click', requestData);
