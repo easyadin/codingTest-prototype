@@ -1,3 +1,5 @@
+
+
 var button = document.getElementById('button');
 var q1 = document.getElementById('q1');
 var q1_ans = document.createElement('h4');
@@ -28,14 +30,10 @@ var highest_appearance_person = null;
 
 // detect when content is updated 
 var responseRecieved = false;
-
+var mouseClicks = 0;
 
 // get data from api
 function requestData(){
-      responseRecieved = true
-      console.log(responseRecieved)
-
- 
     //request films 
     axios.get(starWarsFilm).then(response =>{
       getLongestCrawl(response.data.results);
@@ -65,13 +63,9 @@ function requestData(){
         console.log("not available")
     })
 
-   //modify click when response is recieved
-   if(responseRecieved == true){
-    var btn = document.getElementsByClassName('btn_image')[0];
-    btn.removeAttribute("class");
-    btn.setAttribute("class","activeBtn")
+   
 }
-}
+
 
 //get movie with longest opening crawl
 function getLongestCrawl(data){
